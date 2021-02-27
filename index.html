@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Monoton&family=Permanent+Marker&family=Risque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<title>Document</title>
+</head>
+<body>
+
+    <header id="header" >
+      <div id="header-logo" class="tilt">
+     
+        <img id="header-img" src="https://cdn.shopify.com/s/files/1/2089/7573/products/adore-708lg-clmg_c6dd2b12-adc2-4800-acca-fa3e8be4bc0f.jpg?v=1571718408" alt="">
+        <h4>The Heeler</h4>
+      </div>
+        <h1 id="title">Heels you must have</h1>
+    <div class="hamburger" onclick="hamburgerClick(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="mobile-container">
+        <nav id="nav-bar" >
+            <ul>
+              <li ><a class="nav-link" href="#main-card">HOME</a></li>
+              <li ><a class="nav-link" href="#video">VIDEO</a></li>
+              <li ><a class="nav-link" href="#form">SUBSCRIBE</a></li>
+            </ul>
+          </nav>
+    </div>
+        
+    </header>
+      
+    <main class="tilt" id="main-card"> 
+        <h2>Super dooper heels</h2>
+        <p id="description">We proudly offering you the best heels every poledancer wanna have in her (or his) shoe cabinet</p>
+    </main>
+
+    <section class="video">
+      <h3>Try to break a leg in something like this...</h3>
+      <iframe id="video"  src="https://www.youtube.com/embed/cNVc0gPnjXE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <label for="email">Provide your email. We can´t teach you how to walk and dance gracefully in these shoes, but we can spam you hard enough</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email address" required/>
+      <input id="submit" type="submit" value="I solemnly swear that I am up to no good"/>
+    </form>
+  <footer>
+    &#169 2021 by <a href="https://github.com/fikymar">FikyMar</a> 
+  </footer>
+
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+  <script type="text/javascript">
+
+  //nav responsive
+  const mobileContainer = document.querySelector(".mobile-container");
+  const navLinks = document.querySelectorAll(".nav-link");
+  
+
+  function hamburgerClick (e) {
+    e.classList.toggle("change");
+    mobileContainer.classList.toggle("active");
+
+  };
+
+  navLinks.forEach(item => {
+    item.addEventListener("click", e => {
+    mobileContainer.classList.remove("active");
+  })
+  });
+
+  
+
+
+
+  //tilt 
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+		max: 30,
+		speed: 100,
+    glare: true,
+    "max-glare": 0.7
+	});
+
+ 
+
+
+  </script>
+
+  <!--Images lend from  https://pleasershoes.com/-->
+</body>
+</html>
